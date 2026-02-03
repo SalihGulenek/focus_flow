@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # focus_flow
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# focus_flow
+>>>>>>> 740b954740b00ef3d69669de8f64f852180aa381
