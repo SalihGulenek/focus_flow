@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>FocusFlow Task Detail</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Theme Config -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "primary-dark": "#0f4bc4",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+            "surface-dark": "#1a1d24",
+            "alert-red": "#ff4d4f",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            'glow-red': '0 0 10px rgba(255, 77, 79, 0.5)',
+            'glow-primary': '0 0 15px rgba(19, 91, 236, 0.3)',
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Custom scrollbar for webkit to match minimal theme */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2d3748;
+      border-radius: 3px;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display h-screen flex flex-col overflow-hidden text-slate-900 dark:text-white selection:bg-primary selection:text-white">
+<!-- Header Navigation -->
+<header class="flex items-center justify-between p-4 pt-6 shrink-0 z-10">
+  <button class="flex items-center justify-center w-10 h-10 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-white/5 transition-colors">
+    <span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+  </button>
+  <div class="flex items-center gap-2">
+    <button class="flex items-center justify-center w-10 h-10 rounded-full text-slate-500 hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-white/5 transition-colors">
+      <span class="material-symbols-outlined text-2xl">more_horiz</span>
+    </button>
+  </div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-6 pb-24">
+  <!-- Task Identity -->
+  <div class="mb-6">
+    <div class="flex flex-wrap gap-2 mb-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-primary/20 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[16px] mr-1">tag</span> Q3 UI Overhaul
+                </span>
+      <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-500 border border-amber-500/20">
+<span class="material-symbols-outlined text-[16px] mr-1 filled">bolt</span> High Priority
+                </span>
+    </div>
+    <h1 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white mb-4">
+      Design System Refinement
+    </h1>
+    <!-- Meta Info Row -->
+    <div class="flex items-center gap-4 text-sm font-medium">
+      <div class="flex items-center gap-2 text-alert-red drop-shadow-[0_0_8px_rgba(255,77,79,0.4)]">
+        <span class="material-symbols-outlined filled">notifications_active</span>
+        <span>Due: Today, 4:00 PM</span>
+      </div>
+      <div class="w-1 h-1 rounded-full bg-slate-400"></div>
+      <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+        <span class="material-symbols-outlined text-[18px]">folder_open</span>
+        <span>UI Kit V2</span>
+      </div>
+    </div>
+  </div>
+  <!-- Description Card -->
+  <div class="bg-white dark:bg-surface-dark rounded-xl p-5 mb-8 border border-slate-200 dark:border-white/5 shadow-sm">
+    <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Description</h3>
+    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
+      Standardize the color tokens and typography scale across the mobile and web platforms. Ensure all component variants in Figma map directly to the Tailwind configuration file. Update documentation to reflect the new naming conventions.
+    </p>
+    <!-- Subtasks / Checklist Preview -->
+    <div class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 space-y-2">
+      <div class="flex items-center gap-3 group cursor-pointer">
+        <div class="w-5 h-5 rounded border border-slate-300 dark:border-slate-600 flex items-center justify-center group-hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 text-primary">check</span>
+        </div>
+        <span class="text-sm text-slate-500 dark:text-slate-400">Audit Color Tokens</span>
+      </div>
+      <div class="flex items-center gap-3 group cursor-pointer">
+        <div class="w-5 h-5 rounded border border-slate-300 dark:border-slate-600 flex items-center justify-center group-hover:border-primary transition-colors">
+          <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 text-primary">check</span>
+        </div>
+        <span class="text-sm text-slate-500 dark:text-slate-400">Update Typography Scale</span>
+      </div>
+    </div>
+  </div>
+  <!-- Dependency Graph -->
+  <div class="mb-8">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Dependency Graph</h3>
+      <span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded">Flow View</span>
+    </div>
+    <div class="relative pl-2">
+      <!-- Vertical Line -->
+      <div class="absolute left-[19px] top-4 bottom-8 w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <!-- Node 1: Previous (Completed) -->
+      <div class="relative flex items-start gap-4 mb-6 opacity-60">
+        <div class="z-10 flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center">
+          <span class="material-symbols-outlined text-sm text-slate-500">check</span>
+        </div>
+        <div class="pt-1">
+          <div class="text-xs font-medium text-slate-500 mb-0.5 uppercase tracking-wide">Blocked By</div>
+          <h4 class="text-base font-medium text-slate-500 dark:text-slate-400 line-through">Audit Legacy Components</h4>
+        </div>
+      </div>
+      <!-- Node 2: Current (Active) -->
+      <div class="relative flex items-start gap-4 mb-6">
+        <div class="z-10 flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-glow-primary ring-4 ring-primary/20">
+          <span class="material-symbols-outlined text-sm text-white filled">play_arrow</span>
+        </div>
+        <div class="pt-0.5">
+          <div class="text-xs font-bold text-primary mb-0.5 uppercase tracking-wide">Current Task</div>
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white">Design System Refinement</h4>
+          <div class="mt-2 flex gap-2">
+            <img alt="Team member avatar" class="w-6 h-6 rounded-full border border-background-dark object-cover" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyqPHYo8eRhloJwdwVH-xOzTKMnkZExQI1-ZWCTSVl-yPeU_aQ9xP7DkhNdeQ5dAvU1QPdjpmVtwqia0lFbJvQogFJTIgUA7JeawL8_4PVU0FqlJQT6Vrrt4LeydeTorKsYzvv7uykzVdmBSG9uRcl441MLp76__n4zfqvx_RUPfSANywaK0INI1Ykm_J6CYlWp-Ln5fSoNKso-8LjMTKsZe7Sl9Sp1VnNg1Id2WTEhExmcBkHCrYb4oq1qrgCiScp9UsdEWFbXk26"/>
+            <img alt="Team member avatar" class="w-6 h-6 rounded-full border border-background-dark object-cover" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAySN2v1zJKjQQlsuCrx7gvxMeW82qDsWfErWtXoLgsaI9M3xzbOl4rviL6shqloiK91vMYv0iB4-PnSNTGUhhRiMHRRpZQ3TWRCMu114yZd2xjj0rYHtzFFTmXUX642lx730Tim-nJWbKUOP2y-nlHV1gR8VCJh_NHitIbEm0dybyNnGg4tiv8BkWdCX_SkCa294DQkS_Xs7zEyxZLd57zoZVN1ahvRsWSKDOqbh8LDKmq4gFahTS6SkCbdG3ajEBWFyHssPJTgwiv"/>
+          </div>
+        </div>
+      </div>
+      <!-- Node 3: Next (Pending) -->
+      <div class="relative flex items-start gap-4 opacity-50">
+        <div class="z-10 flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 dark:bg-background-dark border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center">
+          <span class="material-symbols-outlined text-sm text-slate-400">lock</span>
+        </div>
+        <div class="pt-1">
+          <div class="text-xs font-medium text-slate-500 mb-0.5 uppercase tracking-wide">Blocks</div>
+          <h4 class="text-base font-medium text-slate-900 dark:text-slate-200">Update Figma Library</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- Sticky Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark dark:to-transparent z-20">
+  <button class="w-full h-14 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-primary/30 text-white font-bold text-lg group">
+    <span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform filled">timer</span>
+    <span>Start Focus Timer (25m)</span>
+  </button>
+</div>
+</body></html>

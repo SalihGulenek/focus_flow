@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>FocusFlow Splash Screen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#000000", /* Modified to True Black per request */
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'load': 'load 2s ease-in-out infinite',
+          },
+          keyframes: {
+            load: {
+              '0%': { width: '0%', marginLeft: '0%' },
+              '50%': { width: '40%', marginLeft: '30%' },
+              '100%': { width: '10%', marginLeft: '90%' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Custom utilities for the glow effects */
+    .glow-text {
+      text-shadow: 0 0 20px rgba(19, 91, 236, 0.3);
+    }
+    .glow-shape {
+      box-shadow: 0 0 40px rgba(19, 91, 236, 0.4);
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-black text-white selection:bg-primary selection:text-white">
+<div class="relative flex h-screen w-full flex-col items-center justify-center bg-black overflow-hidden font-display">
+  <!-- Background Ambient Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+  <!-- Main Content Wrapper -->
+  <div class="relative z-10 flex flex-col items-center gap-10">
+    <!-- Logo Mark Construction -->
+    <div class="relative flex items-center justify-center w-32 h-32">
+      <!-- Inner Glow -->
+      <div class="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-pulse-slow"></div>
+      <!-- Logo Shape: Stylized F / Infinity Loop -->
+      <!-- Using an SVG here for precise geometric "fluid" shape as requested -->
+      <svg class="drop-shadow-[0_0_15px_rgba(19,91,236,0.8)]" fill="none" height="96" viewbox="0 0 100 100" width="96" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <lineargradient id="logoGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#135bec;stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1"></stop>
+          </lineargradient>
+        </defs>
+        <!-- Fluid F shape -->
+        <path d="M30 20 C 15 20, 15 45, 30 45 L 60 45 C 75 45, 75 70, 60 70 L 40 70" stroke="url(#logoGradient)" stroke-linecap="round" stroke-width="12"></path>
+        <path d="M60 20 C 75 20, 80 35, 70 45" stroke="url(#logoGradient)" stroke-linecap="round" stroke-width="12"></path>
+        <path d="M30 45 L 30 80" stroke="url(#logoGradient)" stroke-linecap="round" stroke-width="12"></path>
+      </svg>
+    </div>
+    <!-- Typography Group -->
+    <div class="flex flex-col items-center text-center gap-2">
+      <!-- Brand Name -->
+      <h1 class="text-white tracking-[0.2em] text-[32px] font-bold leading-tight uppercase glow-text">
+        FocusFlow
+      </h1>
+      <!-- Tagline -->
+      <p class="text-white/60 text-sm font-medium tracking-wider">
+        Flow through your focus
+      </p>
+    </div>
+  </div>
+  <!-- Footer / Loader Area -->
+  <div class="absolute bottom-12 w-full max-w-[240px] flex flex-col items-center gap-4">
+    <!-- Progress Bar -->
+    <div class="w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+      <div class="h-full bg-gradient-to-r from-primary to-cyan-400 rounded-full shadow-[0_0_10px_rgba(19,91,236,1)] animate-load w-[30%]"></div>
+    </div>
+  </div>
+</div>
+</body></html>
